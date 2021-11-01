@@ -1,0 +1,18 @@
+{
+  "name": "fake-user-online",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.14",
+    "websocket": "^1.0.34",
+    "ws": "^8.2.3"
+  }
+}
