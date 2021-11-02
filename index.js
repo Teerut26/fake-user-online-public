@@ -32,10 +32,6 @@ class Fake {
     // this.sendHeartBeat();
   }
 
-  // sendHeartBeat(op, d) {
-  //   setInterval(() => {}, 41250);
-  // }
-
   sendWs(op, d) {
     this.ws.send(JSON.stringify({ op, d }));
   }
@@ -89,7 +85,6 @@ class Fake {
 
     if (!data.t) return;
     switch (data.t) {
-      // we should get this after we send identify
       case "READY":
         console.log("ready as", data.d.user.username);
         break;
@@ -98,53 +93,3 @@ class Fake {
 }
 
 new Fake("wss://gateway.discord.gg/?v=6&encoding=json");
-
-// ws.on("open", function open() {
-//   ws.send(config.getAuth());
-//   ws.send(
-//     JSON.stringify({
-//       op: 3,
-//       d: {
-//         since: 91879201,
-//         activities: [
-//           {
-//             name: "55555",
-//             type: 0,
-//           },
-//         ],
-//         status: "online",
-//         afk: false,
-//       },
-//     })
-//   );
-//   setInterval(() => {
-//     ws.send(
-//       JSON.stringify({
-//         op: 3,
-//         d: {
-//           since: 91879201,
-//           activities: [
-//             {
-//               name: "55555",
-//               type: 0,
-//             },
-//           ],
-//           status: "online",
-//           afk: false,
-//         },
-//       })
-//     );
-//   }, 10000);
-// });
-
-// ws.on("message", function incoming(message) {
-//   let data = JSON.parse(message);
-//   switch (data.t) {
-//     case "MESSAGE_CREATE":
-//       console.log(data);
-//       break;
-
-//     default:
-//       break;
-//   }
-// });
